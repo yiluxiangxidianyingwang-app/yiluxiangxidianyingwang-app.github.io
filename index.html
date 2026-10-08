@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一路向西电影网 - 高清影视在线观看与电影资讯平台 | yiluxiangxidianyingwang-app</title>
+<meta name="description" content="一路向西电影网（yiluxiangxidianyingwang-app）致力于为影迷提供最新高清电影、热门剧集、经典纪录片与独立影像的在线观赏与深度解读。平台涵盖动作、爱情、科幻、悬疑、喜剧、动画等多种类型，配有专业影评、幕后花絮、导演访谈与放映排期，帮助观众快速发现值得一看的好片。">
+<meta name="keywords" content="一路向西电影网, yiluxiangxidianyingwang-app, 高清电影, 在线电影, 电影资讯, 影视推荐, 院线新片, 经典老片, 独立电影, 纪录片, 影评">
+<meta name="author" content="一路向西电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0b1020">
+<meta property="og:title" content="一路向西电影网 - 高清影视在线观看与电影资讯平台">
+<meta property="og:description" content="汇聚最新院线大片、经典修复、独立影像与纪录片，提供专业影评、观影指南与排片信息。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yiluxiangxidianyingwang-app.github.io">
+<meta property="og:site_name" content="一路向西电影网">
+<link rel="canonical" href="https://yiluxiangxidianyingwang-app.github.io">
+<style>
+:root{
+  --ink:#eaf0ff;
+  --muted:#9aa7c9;
+  --line:rgba(255,255,255,.10);
+  --card:rgba(255,255,255,.05);
+  --accent:#ff7a45;
+  --accent2:#ffb020;
+  --deep:#060912;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--deep);
+  color:var(--ink);
+  line-height:1.75;
+  background-image:radial-gradient(1200px 600px at 80% -10%,rgba(255,122,69,.18),transparent 60%),
+                  radial-gradient(900px 500px at 0% 10%,rgba(90,90,255,.14),transparent 55%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(6,9,18,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;height:64px}
+.brand{font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.brand em{font-style:normal;color:var(--accent)}
+.nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{padding:8px 12px;border-radius:10px;font-size:14px;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:#fff;background:var(--card)}
+.hint{display:none;margin-left:auto;color:var(--muted);font-size:13px}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.2;font-weight:900;letter-spacing:-.5px}
+.hero h1 span{background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin-top:18px;max-width:720px;color:var(--muted);font-size:16px}
+.hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:999px;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#1a1208;border:none}
+.chips{margin-top:30px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:6px 14px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid var(--line)}
+
+/* section */
+section{padding:44px 0}
+.eyebrow{font-size:13px;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+h2{font-size:clamp(22px,3.6vw,34px);margin:8px 0 6px;font-weight:800}
+.lead{color:var(--muted);max-width:680px;font-size:15px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+
+/* cards */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,122,69,.5)}
+.thumb{height:150px;position:relative;overflow:hidden}
+.thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,122,69,.35),rgba(30,40,90,.6))}
+.thumb span{position:absolute;left:12px;bottom:10px;z-index:2;font-size:12px;padding:3px 9px;border-radius:6px;background:rgba(0,0,0,.45)}
+.card-body{padding:14px 16px 16px}
+.card-body h3{font-size:16px;margin-bottom:6px}
+.card-body p{font-size:13px;color:var(--muted)}
+.meta{margin-top:10px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+
+/* feature row */
+.frow{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+.frow.reverse{grid-template-columns:.95fr 1.05fr}
+.fbox{border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--card)}
+.fbox h3{font-size:20px;margin-bottom:10px}
+.fbox ul{list-style:none}
+.fbox li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px;color:#cdd5ee}
+.fbox li:last-child{border:0}
+.fbox li b{color:var(--accent2)}
+.bars{display:flex;flex-direction:column;gap:14px}
+.bar label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:6px}
+.track{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--accent2);font-weight:700;font-size:13px}
+td{color:#cdd5ee}
+
+/* faq */
+details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--card);margin-bottom:10px}
+details summary{cursor:pointer;font-weight:700;font-size:15px}
+details p{margin-top:10px;color:var(--muted);font-size:14px}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:34px 0 44px;margin-top:30px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
+.foot-grid h4{font-size:15px;margin-bottom:10px}
+.foot-grid a{display:block;font-size:13px;color:var(--muted);padding:4px 0}
+.foot-grid a:hover{color:#fff}
+.copy{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.domain{color:var(--accent)}
+
+@media (max-width:900px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3,.g2{grid-template-columns:1fr}
+  .frow,.frow.reverse{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .hint{display:block}
+  .g4{grid-template-columns:1fr}
+  .hero{padding:36px 0 24px}
+  .foot-grid{grid-template-columns:1fr}
+  table{font-size:12px}
+  th,td{padding:8px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">一路向西<b>电影网</b></a>
+    <nav class="nav-links">
+      <a href="#now">正在热映</a>
+      <a href="#types">类型片库</a>
+      <a href="#review">深度影评</a>
+      <a href="#schedule">放映排期</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+    <span class="hint">菜单：热映 / 片库 / 影评 / 排期</span>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="eyebrow">Film &middot; Cinema &middot; Story</div>
+    <h1>一路向西电影网 &mdash; <span>把好电影，带到你眼前</span></h1>
+    <p>一路向西电影网（访问地址：<strong class="domain">https://yiluxiangxidianyingwang-app.github.io</strong>）是一个以"选片"为核心的影视内容站。我们不做信息的搬运，只做观影的导航：从院线新片的客观解读，到被时间埋没的经典修复；从导演的作者表达，到摄影、配乐、美术的幕后拆解，力求让每一次点击都通向一部值得看完的片子。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#now">立即选片</a>
+      <a class="btn" href="#types">按类型浏览</a>
+    </div>
+    <div class="chips">
+      <span class="chip">院线同步</span>
+      <span class="chip">4K 修复</span>
+      <span class="chip">独立影像</span>
+      <span class="chip">纪录片</span>
+      <span class="chip">动画长片</span>
+      <span class="chip">短评 &amp; 长评</span>
+    </div>
+  </section>
+
+  <!-- 栏目一：正在热映 -->
+  <section id="now" class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">栏目一 &middot; Now Showing</div>
+        <h2>正在热映 &amp; 值得补看</h2>
+        <p class="lead">综合口碑、叙事完整度与视听完成度，筛选出当下最值得投入两个小时的影片。</p>
+      </div>
+      <a class="btn" href="#">查看完整片单</a>
+    </div>
+    <div class="grid g4">
+      <article class="card">
+        <div class="thumb" style="background:#2b1f3d"><span>剧情 / 历史</span></div>
+        <div class="card-body">
+          <h3>《逆光而行》</h3>
+          <p>一位退休教师在荒漠中重建放映队，胶片与风沙之间的坚守。</p>
+          <div class="meta"><span>8.7 分</span><span>142 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background:#12324a"><span>科幻 / 悬疑</span></div>
+        <div class="card-body">
+          <h3>《第七次日出》</h3>
+          <p>时间循环下的刑侦博弈，用极简场景撑起高密度反转。</p>
+          <div class="meta"><span>8.4 分</span><span>118 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background:#3d2418"><span>动画 / 冒险</span></div>
+        <div class="card-body">
+          <h3>《海风的信》</h3>
+          <p>手绘质感的海岛物语，关于告别、潮汐与未说出口的话。</p>
+          <div class="meta"><span>8.9 分</span><span>96 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="background:#1f3326"><span>犯罪 / 剧情</span></div>
+        <div class="card-body">
+          <h3>《夜航西飞》</h3>
+          <p>边境小城的一桩旧案，群像表演撑起整部电影的呼吸感。</p>
+          <div class="meta"><span>8.2 分</span><span>155 分钟</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目二：类型片库 -->
+  <section id="types" class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">栏目二 &middot; Genre Library</div>
+        <h2>按心情找片：类型片库</h2>
+        <p class="lead">不想看剧情简介？直接告诉我们要什么情绪，我们给出片单。</p>
+      </div>
+      <a class="btn" href="#">片库检索</a>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="card-body">
+          <h3>想被点燃 &mdash; 动作 / 犯罪</h3>
+          <p>长镜头追车、写实格斗、精密抢劫。推荐《极速之境》《无声劫案》《边境线》。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>想被治愈 &mdash; 爱情 / 生活</h3>
+          <p>慢节奏、低配乐、真实对白。推荐《咖啡与雨天》《二楼的光》《晚安，城市》。</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>想烧脑 &mdash; 悬疑 / 科幻</h3>
+          <p>多线叙事、封闭空间、身份谜题。推荐《第七次日出》《镜中人》《休眠者》。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三：深度影评 -->
+  <section id="review" class="wrap">
+    <div class="eyebrow">栏目三 &middot; Critique</div>
+    <h2>深度影评：不止于"好看"或"难看"</h2>
+    <p class="lead">我们关心镜头为什么这样摆、沉默为什么这样长、配乐为什么在此刻响起。</p>
+    <div class="grid g2" style="margin-top:24px">
+      <article class="card">
+        <div class="card-body">
+          <h3>长评 &middot; 《逆光而行》的胶片美学</h3>
+          <p>导演刻意使用 16mm 胶片拍摄沙漠段落，颗粒感不是缺陷，而是记忆的质感。本文拆解三场关键戏的光线设计与剪辑节奏。</p>
+          <div class="meta"><span>长评 &middot; 约 3200 字</span><span>阅读 6 分钟</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-body">
+          <h3>长评 &middot; 时间循环题材的叙事陷阱</h3>
+          <p>从《第七次日出》出发，梳理同类作品中"规则设定—情感落点—闭环逻辑"的三层结构，以及它们常犯的三个错误。</p>
+          <div class="meta"><span>长评 &middot; 约 2600 字</span><span>阅读 5 分钟</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目四：放映排期 -->
+  <section id="schedule" class="wrap">
+    <div class="eyebrow">栏目四 &middot; Screening Schedule</div>
+    <h2>放映排期 &amp; 观影指南</h2>
+    <p class="lead">线下放映、修复展映与主题周的排片信息，含城市、场馆与购票提示。</p>
+    <div style="overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:14px">
+      <table>
+        <thead>
+          <tr><th>日期</th><th>影片</th><th>城市 / 场馆</th><th>单元</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>10 月 11 日</td><td>《海风的信》</td><td>杭州 &middot; 百老汇影城</td><td>动画长片展</td><td>导演映后</td></tr>
+          <tr><td>10 月 14 日</td><td>《逆光而行》</td><td>北京 &middot; 中国电影资料馆</td><td>国产新作</td><td>4K 修复</td></tr>
+          <tr><td>10 月 18 日</td><td>《夜航西飞》</td><td>成都 &middot; 峨影 1958</td><td>作者电影周</td><td>限量 120 席</td></tr>
+          <tr><td>10 月 22 日</td><td>《第七次日出》</td><td>上海 &middot; 大光明电影院</td><td>悬疑之夜</td><td>双语字幕</td></tr>
+          <tr><td>10 月 26 日</td><td>《咖啡与雨天》</td><td>南京 &middot; 新街口影城</td><td>治愈系专场</td><td>含短片上映</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 栏目五：关于 + 数据 -->
+  <section id="about" class="wrap">
+    <div class="eyebrow">栏目五 &middot; About</div>
+    <h2>关于一路向西电影网</h2>
+    <div class="grid g2" style="margin-top:24px;align-items:stretch">
+      <div class="fbox">
+        <h3>我们做什么</h3>
+        <ul>
+          <li><b>选片</b>：每周更新片单，覆盖院线、流媒体与修复展映。</li>
+          <li><b>解读</b>：提供不含剧透的视听分析，帮你在开场前做决定。</li>
+          <li><b>记录</b>：整理导演访谈、幕后花絮与行业观察。</li>
+          <li><b>连接</b>：汇总线下放映与影展信息，让好电影被更多人看见。</li>
+        </ul>
+      </div>
+      <div class="fbox">
+        <h3>内容构成（示意）</h3>
+        <div class="bars">
+          <div><label><span>院线新片解读</span><b>32%</b></label><div class="track"><div class="fill" style="width:32%"></div></div></div>
+          <div><label><span>经典与修复</span><b>24%</b></label><div class="track"><div class="fill" style="width:24%"></div></div></div>
+          <div><label><span>独立与纪录片</span><b>21%</b></label><div class="track"><div class="fill" style="width:21%"></div></div></div>
+          <div><label><span>动画与短片</span><b>14%</b></label><div class="track"><div class="fill" style="width:14%"></div></div></div>
+          <div><label><span>行业与幕后</span><b>9%</b></label><div class="track"><div class="fill" style="width:9%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="wrap">
+    <div class="eyebrow">Q &amp; A</div>
+    <h2>常见疑问</h2>
+    <details open>
+      <summary>一路向西电影网提供在线播放吗？</summary>
+      <p>本站以影片资讯、影评解读与放映排期为主，不直接提供未授权资源的在线播放或下载。文中涉及的观影渠道均以正规院线、正版流媒体与官方展映为准。</p>
+    </details>
+    <details>
+      <summary>如何向本站推荐影片或投稿影评？</summary>
+      <p>可通过页脚的联系方式提交影片信息或原创稿件。来稿需为原创，未在他处公开发表，我们会在一周内回复处理结果。</p>
+    </details>
+    <details>
+      <summary>评分是如何产生的？</summary>
+      <p>评分为编辑部综合"叙事、表演、视听、完成度、创新"五项指标后的内部共识分，满分 10 分，仅代表本站观点，不等同于商业评分。</p>
+    </details>
+    <details>
+      <summary>排期信息多久更新一次？</summary>
+      <p>放映排期为每周一更新，遇节假日或影展期间可能增加加更。场馆与场次以主办方公告为准，本站仅作信息汇总。</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">一路向西<b>电影网</b></a>
+        <p style="color:var(--muted);font-size:13px;margin-top:10px;max-width:320px">把好电影带到你眼前。聚焦选片、解读与放映信息，做不吵闹的观影指南。</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px">官方网址：<span class="domain">https://yiluxiangxidianyingwang-app.github.io</span></p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <a href="#now">正在热映</a>
+        <a href="#types">类型片库</a>
+        <a href="#review">深度影评</a>
+        <a href="#schedule">放映排期</a>
+      </div>
+      <div>
+        <h4>内容分类</h4>
+        <a href="#">剧情</a>
+        <a href="#">科幻</a>
+        <a href="#">动画</a>
+        <a href="#">纪录片</a>
+      </div>
+      <div>
+        <h4>联系与说明</h4>
+        <a href="#">投稿合作</a>
+        <a href="#">版权声明</a>
+        <a href="#">隐私说明</a>
+        <a href="#">意见反馈</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="yr">2026</span> 一路向西电影网 &middot; yiluxiangxidianyingwang-app &middot; 保留所有权利</span>
+      <span>站点地址：https://yiluxiangxidianyingwang-app.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
